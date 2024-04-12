@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sn
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("")
+df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQjOztXo13t00zdGX2HAkJKD3yFylTy-9YlOW8vJGqh43lyybFVTLPK7vw1lxfoP1kE3_neEECs25oL/pub?gid=1427731383&single=true&output=csv")
 df['Name'] = df['Name'].str.lower().str.replace(" ", "")
 df = df.drop_duplicates(subset=['Name'], keep='last')
 df["Wins"] = 0
@@ -24,7 +24,7 @@ for hero in range(len(df)):
                     score += castle
                 elif hero_alloc == villain_alloc:
                     score += 0.5 * castle
-            if score > 27:
+            if score > 27.5:
                 wins += 1
                 heatmap_df.loc[hero, "player{}".format(villain)] = 1
     df.loc[hero, "Wins"] = wins
