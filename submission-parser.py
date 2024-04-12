@@ -12,6 +12,23 @@ heatmap_df = df.copy()
 for player in range(35):
     heatmap_df["player{}".format(player)] = 0
 
+# check if submission is valid
+# i.e. make sure troops sum to 100
+invalid_submissions = []
+for i in range(len(df)):
+    # if df.iloc[i][2:12].sum() != 100:
+    #     print("Submission {} is invalid".format(df.iloc[i]["Name"]))
+    #     df.drop(i, inplace=True)
+    total = 0
+    for j in range(1, 11):
+        total += df.iloc[i]["Castle {}".format(j)]
+    if total != 100:
+        print("{}'s submission is invalid :/".format(df.loc[i, "Name"]))
+        invalid_submissions.append(df.loc[i, "Name"])
+    
+for submission in invalid_submissions:
+    df = df[df["Name"] != submission]
+
 for hero in range(len(df)):
     wins = 0
     for villain in range(len(df)):
