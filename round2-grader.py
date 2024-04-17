@@ -1,6 +1,6 @@
 import pandas as pd
 
-ROUND_2_SUBMISSION_LINK = "REDACTED"
+ROUND_2_SUBMISSION_LINK = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZjYKBtzuFqLbknnS1ErSWqTeoL9u1qZVYwnrrx0fwhMXaIhN5yusVpe2dA-M9amBrY78Dz4nwycdm/pub?output=csv"
 KERB = "kerb (without @mit.edu)"
 
 
